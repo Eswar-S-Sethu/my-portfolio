@@ -2468,3 +2468,12 @@ select.mobile-device {
     border-color: rgba(255, 255, 255, 0.6);
     color: rgba(255, 255, 255, 0.6);
 }
+
+.navbar-brand {
+    padding: 30px;
+}
+
+.navbar-brand img {
+    max-height: 60px;
+    width: auto;
+}
