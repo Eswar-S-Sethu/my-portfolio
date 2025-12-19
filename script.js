@@ -1,5 +1,6 @@
 // Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// Smooth scrolling for navigation links (excluding download CV button)
+document.querySelectorAll('a[href^="#"]:not(#downloadCV)').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
@@ -29,25 +30,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Navbar scroll effect
-let lastScroll = 0;
-const nav = document.querySelector('.nav');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll <= 0) {
-        nav.style.transform = 'translateY(0)';
-    } else if (currentScroll > lastScroll && currentScroll > 100) {
-        // Scrolling down
-        nav.style.transform = 'translateY(-100%)';
-    } else {
-        // Scrolling up
-        nav.style.transform = 'translateY(0)';
-    }
-    
-    lastScroll = currentScroll;
-});
+// Navbar stays visible - removed auto-hide on scroll
 
 // Intersection Observer for scroll animations
 const observerOptions = {
@@ -111,8 +94,6 @@ if (downloadCVBtn) {
         // You can also open a URL to your CV hosted online:
         // window.open('https://your-website.com/cv.pdf', '_blank');
         
-        // For now, show an alert (remove this after adding your actual CV)
-        alert('Please add your CV file (Eswar_CV.pdf) to the same folder as index.html, or update the cvPath variable in script.js with your CV URL.');
     });
 }
 
@@ -176,15 +157,6 @@ contactForm.addEventListener('submit', async (e) => {
         });
         */
     }, 1500);
-});
-
-// Add parallax effect to hero background
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroContent = document.querySelector('.hero-content');
-    if (heroContent) {
-        heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
 });
 
 // Project card click handling
@@ -264,3 +236,30 @@ const addCustomCursor = () => {
 console.log('%c👋 Hey there, fellow developer!', 'font-size: 20px; font-weight: bold; color: #ef4444;');
 console.log('%cLike what you see? Let\'s build something together!', 'font-size: 14px; color: #3b82f6;');
 console.log('%cVisit: eswarsethu.dev', 'font-size: 12px; color: #a1a1a1;');
+// Status Viewer Updater
+// Change your status by updating the text below
+function updateStatus(statusText, color = '#10b981') {
+    const statusTextElement = document.querySelector('.status-text');
+    const statusDot = document.querySelector('.status-dot');
+    
+    if (statusTextElement) {
+        statusTextElement.textContent = statusText;
+    }
+    
+    if (statusDot) {
+        statusDot.style.background = color;
+        statusDot.style.boxShadow = `0 0 10px ${color}80`;
+    }
+}
+
+// Example status options - you can change this anytime:
+// updateStatus('Working on a personal project', '#10b981');  // Green
+// updateStatus('Working on freelance project', '#3b82f6');   // Blue
+// updateStatus('Free to work', '#10b981');                   // Green
+// updateStatus('Doing nothing', '#6b7280');                  // Gray
+// updateStatus('Reading', '#8b5cf6');                        // Purple
+// updateStatus('Working part time', '#f59e0b');              // Orange
+// updateStatus('Driving', '#ef4444');                        // Red
+// updateStatus('On vacation', '#ec4899');                    // Pink
+
+// To change your status, uncomment one of the lines above or add your own!

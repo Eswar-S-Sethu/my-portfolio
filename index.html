@@ -17,14 +17,23 @@
             <a href="#home" class="logo">
                 <img src="logo_eswar.png" alt="eswarsethu.dev" class="logo-img">
             </a>
+            
+            <!-- Status Viewer -->
+            <div class="status-viewer">
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Working on a personal project</span>
+                </div>
+            </div>
+            
             <div class="nav-links">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#work" class="nav-link">Work</a>
-                <a href="#blogs" class="nav-link">Blog</a>
+                <!-- <a href="#blogs" class="nav-link">Blog</a> -->
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <button class="menu-toggle" aria-label="Toggle menu">
-                <span></span>My Work
+                <span></span>
                 <span></span>
                 <span></span>
             </button>
@@ -65,46 +74,30 @@
                     <span class="section-label">About Me</span>
                     <h2 class="section-title">Hi, I'm Eswar</h2>
                     <p class="about-description">
-                        I'm a passionate full-stack developer with a love for creating beautiful, functional, and user-friendly applications. With expertise spanning from frontend design to backend architecture, I bring ideas to life through clean, efficient code and thoughtful design.
+                        I build stuff and ship it. Recent Master of IT grad from Deakin who's launched three applications 
+                        independently: ToolStack (web utilities platform live for 6+ months), 
+                        Anything (Flutter inventory app currently in beta with 15+ users), and 
+                        Lazy Alarm (published Alexa skill).
                     </p>
                     <p class="about-description">
-                        My journey in software development has been driven by curiosity and a constant desire to learn. I specialize in building scalable web applications, mobile solutions, and everything in between. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.
+                        I care more about whether software actually works for real people than 
+                        whether it's perfect. My approach: ship a barebone MVP, get it in users' 
+                        hands, gather feedback, iterate based on what they actually need—not what 
+                        I think they need.
                     </p>
                     <p class="about-description">
-                        I believe in the power of technology to solve real-world problems and create meaningful experiences. Whether it's a startup MVP or an enterprise solution, I approach every project with dedication, creativity, and a commitment to excellence.
+                        Tech stack: Python, React, Flutter, Rust. I learn new frameworks by 
+                        building with them, not by reading documentation cover to cover.
+
+                        Currently learning FastAPI, looking for my first full-time role in 
+                        Melbourne where I can contribute immediately while growing professionally.
+
                     </p>
                     <a href="#" class="btn btn-primary download-cv" id="downloadCV">
                         <span class="btn-icon">📄</span>
                         Download CV
                     </a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- My Journey Section -->
-    <section id="journey" class="journey">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">My Story</span>
-                <h2 class="section-title">My Journey</h2>
-            </div>
-            <div class="journey-content">
-                <p class="journey-text">
-                    My fascination with technology began at an early age when I first discovered the magic of creating something from nothing with just a few lines of code. What started as curiosity quickly transformed into a passion that would shape my career and life.
-                </p>
-                <p class="journey-text">
-                    Throughout my academic journey, I immersed myself in computer science, devouring everything from algorithms and data structures to web development and mobile applications. But it wasn't just about learning the theory—I was eager to build, experiment, and push boundaries. Each project taught me something new, each bug made me a better problem solver, and each success fueled my determination to keep growing.
-                </p>
-                <p class="journey-text">
-                    As I transitioned into professional development, I realized that great software isn't just about writing code—it's about understanding users, solving real problems, and creating experiences that make a difference. I've had the privilege of working on diverse projects across multiple industries, from e-commerce platforms serving thousands of users to mobile applications that put powerful tools in people's pockets.
-                </p>
-                <p class="journey-text">
-                    What drives me today is the same thing that drew me to programming years ago: the thrill of creation, the satisfaction of solving complex problems, and the joy of seeing my work make an impact. I'm constantly learning, whether it's a new framework, a different programming paradigm, or better ways to collaborate with teams and clients.
-                </p>
-                <p class="journey-text">
-                    Now, as a freelance developer, I bring all these experiences together to help businesses and individuals turn their ideas into reality. Every project is a new adventure, every client brings unique challenges, and I couldn't be more excited about what comes next.
-                </p>
             </div>
         </div>
     </section>
@@ -119,128 +112,112 @@
             
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <article class="project-card" data-url="https://github.com/Eswar-S-Sethu">
+                <article class="project-card" data-url="https://toolstack.com.au/">
                     <div class="project-image">
                         <div class="project-overlay">
                             <span class="project-view">View Project →</span>
                         </div>
-                        <div class="project-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                            <span class="project-icon">🚀</span>
-                        </div>
+                        <img src="projects/project1.png" alt="ToolStack" class="project-img">
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
+                            <span class="tag">HTML5</span>
+                            <span class="tag">BootStrap 5</span>
+                            <span class="tag">Vanilla JS</span>
+                            <Span class="tag">Rust</Span>
+                            <span class="tag">WebAssembly</span>
                         </div>
-                        <h3 class="project-title">E-Commerce Platform</h3>
-                        <p class="project-desc">Full-featured online marketplace with real-time inventory management, payment integration, and admin dashboard.</p>
+                        <h3 class="project-title">ToolStack</h3>
+                        <p class="project-desc">A suite of tools including a Bulk Unit Converter, Image Compressor, Hash Generator, JSON Validator, Regex Tester, Bulk Currency Converter. All running offline without a backend.</p>
                     </div>
                 </article>
 
                 <!-- Project 2 -->
-                <article class="project-card" data-url="https://github.com/Eswar-S-Sethu">
+                <article class="project-card" data-url="https://www.amazon.com.au/Eswar-Lazy-Alarm/dp/B0G2MPTXFT/ref=sr_1_3?crid=1IXAQPEHFW8UN&dib=eyJ2IjoiMSJ9.0o8KodiPfKB7KE2SJmNAVQ.yGOHVld1IBdWSeUCHvqQ9PjP6gCdYNviAxHL1OXcm9s&dib_tag=se&keywords=lazy+alarm&qid=1766173031&s=digital-skills&sprefix=%2Calexa-skills%2C269&sr=1-3">
                     <div class="project-image">
                         <div class="project-overlay">
                             <span class="project-view">View Project →</span>
                         </div>
-                        <div class="project-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                            <span class="project-icon">📊</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="tag">Vue.js</span>
-                            <span class="tag">D3.js</span>
-                            <span class="tag">Firebase</span>
-                        </div>
-                        <h3 class="project-title">Analytics Dashboard</h3>
-                        <p class="project-desc">Interactive data visualization platform for tracking KPIs with customizable widgets and real-time updates.</p>
-                    </div>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="project-card" data-url="https://github.com/Eswar-S-Sethu">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <span class="project-view">View Project →</span>
-                        </div>
-                        <div class="project-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                            <span class="project-icon">💬</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="tag">Next.js</span>
-                            <span class="tag">WebSocket</span>
-                            <span class="tag">PostgreSQL</span>
-                        </div>
-                        <h3 class="project-title">Team Collaboration Tool</h3>
-                        <p class="project-desc">Real-time messaging and project management application with file sharing and task tracking capabilities.</p>
-                    </div>
-                </article>
-
-                <!-- Project 4 -->
-                <article class="project-card" data-url="https://github.com/Eswar-S-Sethu">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <span class="project-view">View Project →</span>
-                        </div>
-                        <div class="project-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                            <span class="project-icon">🎨</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="tag">React Native</span>
-                            <span class="tag">TypeScript</span>
-                            <span class="tag">Redux</span>
-                        </div>
-                        <h3 class="project-title">Creative Portfolio App</h3>
-                        <p class="project-desc">Mobile application for artists to showcase their work with advanced filtering and social features.</p>
-                    </div>
-                </article>
-
-                <!-- Project 5 -->
-                <article class="project-card" data-url="https://github.com/Eswar-S-Sethu">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <span class="project-view">View Project →</span>
-                        </div>
-                        <div class="project-placeholder" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
-                            <span class="project-icon">🔒</span>
-                        </div>
+                        <img src="projects/project2.png" alt="Lazy Alarm" class="project-img">
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
                             <span class="tag">Python</span>
-                            <span class="tag">Django</span>
-                            <span class="tag">AWS</span>
+                            <span class="tag">Dynamo DB</span>
+                            <span class="tag">Alexa Skill</span>
                         </div>
-                        <h3 class="project-title">Secure API Gateway</h3>
-                        <p class="project-desc">Enterprise-grade API management system with authentication, rate limiting, and comprehensive logging.</p>
+                        <h3 class="project-title">Lazy Alarm</h3>
+                        <p class="project-desc">An Alexa Skill designed to help you wake up after your morning alarm goes off by asking math questions.</p>
                     </div>
                 </article>
 
-                <!-- Project 6 -->
-                <article class="project-card" data-url="https://github.com/Eswar-S-Sethu">
+                <!-- Project 3 -->
+                <article class="project-card" data-url="https://github.com/Eswar-S-Sethu/DeliveryMate">
                     <div class="project-image">
                         <div class="project-overlay">
                             <span class="project-view">View Project →</span>
                         </div>
-                        <div class="project-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
-                            <span class="project-icon">🎯</span>
-                        </div>
+                        <img src="projects/project3.png" alt="DeliveryMate" class="project-img">
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
-                            <span class="tag">Angular</span>
-                            <span class="tag">GraphQL</span>
-                            <span class="tag">Docker</span>
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">WebSocket</span>
+                            <span class="tag">NodeJS</span>
                         </div>
-                        <h3 class="project-title">Marketing Automation Suite</h3>
-                        <p class="project-desc">Comprehensive platform for managing email campaigns, analytics, and customer segmentation.</p>
+                        <h3 class="project-title">DeliveryMate</h3>
+                        <p class="project-desc">DeliveryMate is a new and independent community-sharing platform designed to cultivate stronger connections among community members by facilitating the shared transport of goods.</p>
+                    </div>
+                </article>
+
+                <article class="project-card" data-url="https://github.com/Eswar-S-Sethu/geekpad">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-view">View Project →</span>
+                        </div>
+                        <img src="projects/project4.png" alt="Project 4" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Rust</span>
+                        </div>
+                        <h3 class="project-title">GeekPad</h3>
+                        <p class="project-desc">GeekPad is a secure, minimalist, CLI notepad built with Rust.</p>
+                    </div>
+                </article>
+
+                <article class="project-card" data-url="https://github.com/Eswar-S-Sethu/Sentry">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-view">View Project →</span>
+                        </div>
+                        <img src="projects/project5.png" alt="Project 5" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Telegram</span>
+                        </div>
+                        <h3 class="project-title">Sentry - Stock Price Monitor Telegram Bot</h3>
+                        <p class="project-desc">A 24/7 stock price monitoring bot that sends Telegram alerts when prices breach your set limits.</p>
+                    </div>
+                </article>
+
+                <article class="project-card" data-url="https://pristinedetailers.com.au/?srsltid=AfmBOoqaHT9stbZX4Hb8c_r0KvQ4mzqYgQNpEe0AbpKn9KCJKeCW5GwX">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-view">View Project →</span>
+                        </div>
+                        <img src="projects/project6.png" alt="Project 6" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">ReactJS</span>
+                            <span class="tag">Git</span>
+                        </div>
+                        <h3 class="project-title">Pristine Detailers Website</h3>
+                        <p class="project-desc">Upgraded company website from shopify site to a ReactJS site and worked on the UI elements.</p>
                     </div>
                 </article>
             </div>
@@ -352,15 +329,13 @@
         </div>
     </section>
 
-    <!-- Blogs Section -->
-    <section id="blogs" class="blogs">
+    <!-- <section id="blogs" class="blogs">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Latest Posts</span>
                 <h2 class="section-title">Blogs & Articles</h2>
             </div>
             <div class="blogs-grid">
-                <!-- Blog 1 -->
                 <article class="blog-card">
                     <div class="blog-image">
                         <div class="blog-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
@@ -380,7 +355,6 @@
                     </div>
                 </article>
 
-                <!-- Blog 2 -->
                 <article class="blog-card">
                     <div class="blog-image">
                         <div class="blog-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
@@ -401,17 +375,15 @@
                 </article>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
+    <!-- <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">What Clients Say</span>
                 <h2 class="section-title">Testimonials</h2>
             </div>
             <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <div class="quote-icon">"</div>
@@ -430,7 +402,6 @@
                     </div>
                 </div>
 
-                <!-- Testimonial 2 -->
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <div class="quote-icon">"</div>
@@ -450,7 +421,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- FAQ Section -->
     <section id="faq" class="faq">
@@ -560,10 +531,11 @@
                             <option value="">Select a project type</option>
                             <option value="web-app">Web Application</option>
                             <option value="mobile-app">Mobile Application</option>
-                            <option value="website">Website</option>
+                            <option value="website">Bug Fixing</option>
+                            <option value="shopify migration">Shopify Website Migration</option>
                             <option value="api">API Development</option>
-                            <option value="consulting">Consulting</option>
-                            <option value="other">Other</option>
+                            <option value="consulting">CLI Development</option>
+                            <option value="other">IoT</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -584,11 +556,11 @@
                     <img src="eswarssethu.png" alt="Logo" class="footer-logo">
                     <p class="footer-tagline"><b>Eswar</b></p>
                 </div>
-                <div class="footer-links">
+                <!-- <div class="footer-links">
                     <a href="#work">Work</a>
                     <a href="#experience">Experience</a>
                     <a href="#contact">Contact</a>                
-                </div>
+                </div> -->
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 eswarssethu.dev
@@ -597,4 +569,8 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
 
