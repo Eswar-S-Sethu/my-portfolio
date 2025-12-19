@@ -65,13 +65,56 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Animate elements on scroll
-const animateOnScroll = document.querySelectorAll('.project-card, .timeline-item, .skill-category');
+const animateOnScroll = document.querySelectorAll('.project-card, .timeline-item, .skill-category, .blog-card, .testimonial-card, .faq-item');
 animateOnScroll.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
+
+// FAQ Accordion functionality
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const isActive = faqItem.classList.contains('active');
+        
+        // Close all FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.classList.remove('active');
+        });
+        
+        // Toggle current item
+        if (!isActive) {
+            faqItem.classList.add('active');
+        }
+    });
+});
+
+// Download CV functionality
+const downloadCVBtn = document.getElementById('downloadCV');
+if (downloadCVBtn) {
+    downloadCVBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Replace 'Eswar_CV.pdf' with the actual path to your CV file
+        const cvPath = 'Eswar_CV.pdf';
+        
+        // Create a temporary link and trigger download
+        const link = document.createElement('a');
+        link.href = cvPath;
+        link.download = 'Eswar_CV.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // You can also open a URL to your CV hosted online:
+        // window.open('https://your-website.com/cv.pdf', '_blank');
+        
+        // For now, show an alert (remove this after adding your actual CV)
+        alert('Please add your CV file (Eswar_CV.pdf) to the same folder as index.html, or update the cvPath variable in script.js with your CV URL.');
+    });
+}
 
 // Form handling
 const contactForm = document.querySelector('.contact-form');
@@ -144,24 +187,14 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Project card click handling (add your own URLs)
-document.querySelectorAll('.project-card').forEach((card, index) => {
+// Project card click handling
+document.querySelectorAll('.project-card').forEach((card) => {
     card.style.cursor = 'pointer';
     card.addEventListener('click', () => {
-        // Replace with your actual project URLs
-        const projectUrls = [
-            '#', // E-Commerce Platform
-            '#', // Analytics Dashboard
-            '#', // Team Collaboration Tool
-            '#', // Creative Portfolio App
-            '#', // Secure API Gateway
-            '#'  // Marketing Automation Suite
-        ];
-        
-        // Uncomment to enable navigation
-        // window.open(projectUrls[index], '_blank');
-        
-        console.log(`Project ${index + 1} clicked`);
+        const url = card.getAttribute('data-url');
+        if (url && url !== '#') {
+            window.open(url, '_blank');
+        }
     });
 });
 

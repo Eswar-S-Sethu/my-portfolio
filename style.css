@@ -322,6 +322,341 @@ section {
     line-height: 1.2;
 }
 
+/* About Me Section */
+.about {
+    background: var(--dark-light);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-placeholder {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-placeholder:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.profile-icon {
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-text .section-label {
+    display: block;
+    text-align: left;
+}
+
+.about-text .section-title {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.about-description {
+    color: #d1d1d1;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.download-cv {
+    margin-top: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+/* My Journey Section */
+.journey {
+    background: var(--dark);
+}
+
+.journey-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.journey-text {
+    color: #d1d1d1;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: 2rem;
+}
+
+.journey-text:last-child {
+    margin-bottom: 0;
+}
+
+/* Blogs Section */
+.blogs {
+    background: var(--dark);
+}
+
+.blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-card {
+    background: var(--dark-lighter);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+}
+
+.blog-image {
+    height: 240px;
+    overflow: hidden;
+}
+
+.blog-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+.blog-icon {
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+.blog-content {
+    padding: 2rem;
+}
+
+.blog-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.blog-date,
+.blog-category {
+    font-size: 0.85rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.blog-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    color: var(--text-primary);
+}
+
+.blog-excerpt {
+    color: #d1d1d1;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.blog-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.blog-link:hover {
+    color: var(--accent-blue);
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: var(--dark-light);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: var(--dark-lighter);
+    border-radius: 16px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(239, 68, 68, 0.2);
+}
+
+.testimonial-content {
+    margin-bottom: 2rem;
+}
+
+.quote-icon {
+    font-size: 4rem;
+    color: var(--accent);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    color: #d1d1d1;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.avatar-icon {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.author-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: var(--text-primary);
+}
+
+.author-role {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* FAQ Section */
+.faq {
+    background: var(--dark);
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--dark-lighter);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--accent-blue);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.8rem 2rem;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--accent-blue);
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    color: var(--accent);
+    transition: transform 0.3s ease;
+    font-weight: 400;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.faq-answer p {
+    color: #d1d1d1;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
 /* Work Section */
 .work {
     background: var(--dark-light);
@@ -624,6 +959,16 @@ section {
     transition: all 0.3s ease;
 }
 
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group select option {
+    background: var(--dark-lighter);
+    color: var(--text-primary);
+    padding: 1rem;
+}
+
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     color: #6b6b6b;
@@ -706,6 +1051,36 @@ section {
     .contact-content {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .profile-placeholder {
+        width: 250px;
+        height: 250px;
+        margin: 0 auto;
+    }
+
+    .about-text .section-label,
+    .about-text .section-title {
+        text-align: center;
+    }
+
+    .about-description {
+        text-align: center;
+    }
+
+    .download-cv {
+        display: flex;
+        justify-content: center;
+    }
+
+    .blogs-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
     }
 
     .timeline::before {
