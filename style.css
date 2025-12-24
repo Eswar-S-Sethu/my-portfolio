@@ -75,6 +75,10 @@ body {
     max-width: 400px;
 }
 
+.status-mobile {
+    display: none;
+}
+
 .status-indicator {
     display: flex;
     align-items: center;
@@ -98,6 +102,7 @@ body {
     border-radius: 50%;
     animation: statusPulse 2s ease-in-out infinite;
     box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+    flex-shrink: 0;
 }
 
 @keyframes statusPulse {
@@ -111,13 +116,27 @@ body {
     }
 }
 
+.status-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+}
+
 .status-text {
     font-size: 0.85rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.status-timestamp {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    white-space: nowrap;
 }
 
 .nav-links {
@@ -1184,7 +1203,7 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .status-viewer {
+    .nav-container .status-viewer {
         display: none;
     }
 
@@ -1196,10 +1215,55 @@ section {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .status-desktop {
+        display: none !important;
+    }
+
+    .status-mobile {
+        display: flex !important;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        order: -1;
+    }
+
+    .status-mobile .status-indicator {
+        width: 100%;
+        justify-content: center;
     }
 
     .menu-toggle {
         display: flex;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
     }
 
     .hero {

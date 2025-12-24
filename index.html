@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eswar - Full Stack Developer</title>
-    <meta name="description" content="Full Stack Developer specializing in modern web applications. Available for freelance projects.">
+    <title>Eswar - Software Developer</title>
+    <!-- Standard favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicons/favicon-48x48.png">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/favicon-180x180.png">
+    
+    <!-- Android/Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="favicons/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicons/favicon.png">
+    <meta name="description" content="Software Developer specializing in modern web, mobile and IoT applications. Available for freelance projects.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&family=Lobster&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -17,16 +28,29 @@
             <a href="#home" class="logo">
                 <img src="logo_eswar.png" alt="eswarsethu.dev" class="logo-img">
             </a>
-            
-            <!-- Status Viewer -->
-            <div class="status-viewer">
+            <!-- Status Viewer (Desktop) -->
+            <div class="status-viewer status-desktop">
                 <div class="status-indicator">
                     <span class="status-dot"></span>
-                    <span class="status-text">Working on a personal project</span>
+                    <div class="status-content">
+                        <span class="status-text">Working on a personal project</span>
+                        <span class="status-timestamp">Updated just now</span>
+                    </div>
                 </div>
             </div>
             
             <div class="nav-links">
+                <!-- Status Viewer (Mobile) -->
+                <div class="status-viewer status-mobile">
+                    <div class="status-indicator">
+                        <span class="status-dot status-dot-mobile"></span>
+                        <div class="status-content">
+                            <span class="status-text status-text-mobile">Working on a personal project</span>
+                            <span class="status-timestamp status-timestamp-mobile">Updated just now</span>
+                        </div>
+                    </div>
+                </div>
+                
                 <a href="#about" class="nav-link">About</a>
                 <a href="#work" class="nav-link">Work</a>
                 <!-- <a href="#blogs" class="nav-link">Blog</a> -->
@@ -204,20 +228,109 @@
                     </div>
                 </article>
 
-                <article class="project-card" data-url="https://pristinedetailers.com.au/?srsltid=AfmBOoqaHT9stbZX4Hb8c_r0KvQ4mzqYgQNpEe0AbpKn9KCJKeCW5GwX">
+                <article class="project-card" data-url="https://github.com/Eswar-S-Sethu/find-my-stuff">
                     <div class="project-image">
                         <div class="project-overlay">
                             <span class="project-view">View Project →</span>
                         </div>
-                        <img src="projects/project6.png" alt="Project 6" class="project-img">
+                        <img src="projects/anything.jpg" alt="Project 6" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">SQLite</span>
+                        </div>
+                        <h3 class="project-title">ANY-thing - inventory management app</h3>
+                        <p class="project-desc">An app designed to manage inventory for individuals and small businesses. Currently in Beta.</p>
+                    </div>
+                </article>
+                <article class="project-card" data-url="">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-view">View Project →</span>
+                        </div>
+                        <img src="projects/iot-env-prog.png" alt="Project 6" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Arduino</span>
+                        </div>
+                        <h3 class="project-title">Environment Monitor</h3>
+                        <p class="project-desc">Working on an Arduino project to monitor my environment using temperature, light, and, humidity sensors. </p>
+                    </div>
+                </article>
+                <article class="project-card" data-url="">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-view">View Project →</span>
+                        </div>
+                        <img src="projects/iot-taptodrive-prog.png" alt="Project 6" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Raspberry Pi</span>
+                            <span class="tag">Arduino</span>
+                        </div>
+                        <h3 class="project-title">Tap-To-Drive</h3>
+                        <p class="project-desc">My star project. This uses smartphone to start your car after verifying your license and rego.</p>
+                    </div>
+                </article>
+                <article class="project-card" data-url="">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-view">View Project →</span>
+                        </div>
+                        <img src="projects/iot-trolley-prog.png" alt="Project 6" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Raspberry Pi</span>
+                        </div>
+                        <h3 class="project-title">Trolley Tracker</h3>
+                        <p class="project-desc">A project which is aimed at helping find lost shopping trolleys on the street. Using LoraWAN and Raspberry Pi.</p>
+                    </div>
+                </article>
+                <article class="project-card" data-url="">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-view">View Project →</span>
+                        </div>
+                        <img src="projects/subscan-prog.png" alt="Project 6" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JS</span>
+                            <span class="tag">WebAssembly</span>
+                            <span class="tag">Rust</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <h3 class="project-title">SubScan</h3>
+                        <p class="project-desc">A subscription tracker system made using Rust and webassembly.</p>
+                    </div>
+                </article>
+                <article class="project-card" data-url="">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-view">View Project →</span>
+                        </div>
+                        <img src="projects/flow-prog.png" alt="Project 6" class="project-img">
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
                             <span class="tag">ReactJS</span>
-                            <span class="tag">Git</span>
+                            <span class="tag">Mystral</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Rust</span>
+                            <span class="tag">WebAssembly</span>
                         </div>
-                        <h3 class="project-title">Pristine Detailers Website</h3>
-                        <p class="project-desc">Upgraded company website from shopify site to a ReactJS site and worked on the UI elements.</p>
+                        <h3 class="project-title">Flow</h3>
+                        <p class="project-desc">A Rust and WebAssembly website for managing calendar events.</p>
                     </div>
                 </article>
             </div>
@@ -363,19 +476,11 @@
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span class="blog-date">December 10, 2024</span>
-                            <span class="blog-category">Mobile Dev</span>
-                        </div>
-                        <h3 class="blog-title">The Future of Cross-Platform Mobile Development</h3>
-                        <p class="blog-excerpt">
-                            A deep dive into Flutter and React Native, comparing performance, developer experience, and ecosystem maturity. Discover which framework might be the best fit for your next mobile project.
-                        </p>
-                        <a href="#" class="blog-link">Read More →</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section> -->
+                            <span class="blog-date">December 10, 2024</<!-- <div class="footer-links">
+                    <a href="#work">Work</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#contact">Contact</a>                
+                </div> -->
 
     <!-- <section id="testimonials" class="testimonials">
         <div class="container">
@@ -438,7 +543,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>I work on a wide range of projects including web applications, mobile apps, e-commerce platforms, API development, and custom software solutions. Whether you need a simple landing page or a complex enterprise system, I can help bring your vision to life.</p>
+                        <p>I work on a wide range of projects including web applications, mobile apps, IoT projects, API development, and custom software solutions. Whether you need a simple landing page or a complex enterprise system, I can help bring your vision to life.</p>
                     </div>
                 </div>
 
@@ -449,7 +554,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Project timelines vary depending on complexity and scope. A simple website might take 2-3 weeks, while a full-scale web application could take 2-3 months. I always provide realistic estimates during our initial consultation and keep you updated throughout the development process.</p>
+                        <p>Project timelines vary depending on complexity and scope. A simple website might take 1-2 weeks, while a full-scale web application could take 1-3 months. I always provide realistic estimates during our initial consultation and keep you updated throughout the development process.</p>
                     </div>
                 </div>
 
@@ -516,7 +621,7 @@
                     </div>
                 </div>
 
-                <form class="contact-form">
+                <form class="contact-form" action="https://formspree.io/f/meejpkbz">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -532,7 +637,6 @@
                             <option value="web-app">Web Application</option>
                             <option value="mobile-app">Mobile Application</option>
                             <option value="website">Bug Fixing</option>
-                            <option value="shopify migration">Shopify Website Migration</option>
                             <option value="api">API Development</option>
                             <option value="consulting">CLI Development</option>
                             <option value="other">IoT</option>
@@ -556,11 +660,6 @@
                     <img src="eswarssethu.png" alt="Logo" class="footer-logo">
                     <p class="footer-tagline"><b>Eswar</b></p>
                 </div>
-                <!-- <div class="footer-links">
-                    <a href="#work">Work</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#contact">Contact</a>                
-                </div> -->
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 eswarssethu.dev

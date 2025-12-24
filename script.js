@@ -97,68 +97,6 @@ if (downloadCVBtn) {
     });
 }
 
-// Form handling
-const contactForm = document.querySelector('.contact-form');
-
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    
-    // Get the submit button
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    
-    // Show loading state
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-    
-    // Simulate form submission (replace with your actual form handling)
-    setTimeout(() => {
-        // Success message
-        submitBtn.textContent = 'Message Sent! ✓';
-        submitBtn.style.background = '#10b981';
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Reset button after 3 seconds
-        setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            submitBtn.style.background = '';
-        }, 3000);
-        
-        // In production, replace the setTimeout above with actual form submission:
-        /*
-        fetch('YOUR_FORM_ENDPOINT', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(result => {
-            submitBtn.textContent = 'Message Sent! ✓';
-            submitBtn.style.background = '#10b981';
-            contactForm.reset();
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                submitBtn.style.background = '';
-            }, 3000);
-        })
-        .catch(error => {
-            submitBtn.textContent = 'Error. Try Again';
-            submitBtn.disabled = false;
-            console.error('Error:', error);
-        });
-        */
-    }, 1500);
-});
-
 // Project card click handling
 document.querySelectorAll('.project-card').forEach((card) => {
     card.style.cursor = 'pointer';
@@ -236,30 +174,153 @@ const addCustomCursor = () => {
 console.log('%c👋 Hey there, fellow developer!', 'font-size: 20px; font-weight: bold; color: #ef4444;');
 console.log('%cLike what you see? Let\'s build something together!', 'font-size: 14px; color: #3b82f6;');
 console.log('%cVisit: eswarsethu.dev', 'font-size: 12px; color: #a1a1a1;');
-// Status Viewer Updater
-// Change your status by updating the text below
-function updateStatus(statusText, color = '#10b981') {
-    const statusTextElement = document.querySelector('.status-text');
-    const statusDot = document.querySelector('.status-dot');
+
+
+const STATUS_API_URL = 'https://status-api.eswarssethu.workers.dev/status';
+
+// Function to calculate time ago
+function getTimeAgo(timestamp) {
+    const now = new Date();
+    const past = new Date(timestamp);
+    const seconds = Math.floor((now - past) / 1000);
     
-    if (statusTextElement) {
-        statusTextElement.textContent = statusText;
-    }
+    if (seconds < 60) return 'just now';
     
-    if (statusDot) {
-        statusDot.style.background = color;
-        statusDot.style.boxShadow = `0 0 10px ${color}80`;
+    const minutes = Math.floor(seconds / 60);
+    if (minutes < 60) return `${minutes}m ago`;
+    
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return `${hours}h ago`;
+    
+    const days = Math.floor(hours / 24);
+    if (days < 7) return `${days}d ago`;
+    
+    const weeks = Math.floor(days / 7);
+    if (weeks < 4) return `${weeks}w ago`;
+    
+    const months = Math.floor(days / 30);
+    return `${months}mo ago`;
+}
+
+async function loadStatus() {
+    try {
+        const response = await fetch(STATUS_API_URL);
+        const data = await response.json();
+
+        const statusTextElement = document.querySelector('.status-text');
+        const statusDot = document.querySelector('.status-dot');
+        const statusTimestamp = document.querySelector('.status-timestamp');
+        const statusTextMobile = document.querySelector('.status-text-mobile');
+        const statusDotMobile = document.querySelector('.status-dot-mobile');
+        const statusTimestampMobile = document.querySelector('.status-timestamp-mobile');
+
+        if (statusTextElement && data.text) statusTextElement.textContent = data.text;
+        if (statusTextMobile && data.text) statusTextMobile.textContent = data.text;
+
+        if (statusDot && data.color) {
+            statusDot.style.background = data.color;
+            statusDot.style.boxShadow = `0 0 10px ${data.color}80`;
+        }
+        if (statusDotMobile && data.color) {
+            statusDotMobile.style.background = data.color;
+            statusDotMobile.style.boxShadow = `0 0 10px ${data.color}80`;
+        }
+
+        if (statusTimestamp && data.timestamp) {
+            const timeAgo = getTimeAgo(data.timestamp);
+            statusTimestamp.textContent = `Updated ${timeAgo}`;
+        }
+        if (statusTimestampMobile && data.timestamp) {
+            const timeAgo = getTimeAgo(data.timestamp);
+            statusTimestampMobile.textContent = `Updated ${timeAgo}`;
+        }
+
+        console.log('✅ Status loaded:', data.text);
+    } catch (error) {
+        console.log('ℹ️ Using default status');
     }
 }
 
-// Example status options - you can change this anytime:
-// updateStatus('Working on a personal project', '#10b981');  // Green
-// updateStatus('Working on freelance project', '#3b82f6');   // Blue
-// updateStatus('Free to work', '#10b981');                   // Green
-// updateStatus('Doing nothing', '#6b7280');                  // Gray
-// updateStatus('Reading', '#8b5cf6');                        // Purple
-// updateStatus('Working part time', '#f59e0b');              // Orange
-// updateStatus('Driving', '#ef4444');                        // Red
-// updateStatus('On vacation', '#ec4899');                    // Pink
+// Form handling with Formspree
+const contactForm = document.querySelector('.contact-form');
 
-// To change your status, uncomment one of the lines above or add your own!
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(contactForm);
+        
+        // Get the submit button
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        
+        // Show loading state
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        try {
+            // Get form action URL
+            const formAction = contactForm.getAttribute('action');
+            
+            console.log('Submitting to:', formAction); // Debug log
+            
+            if (!formAction || formAction.includes('YOUR_FORM_ID')) {
+                alert('⚠️ Please set up your Formspree Form ID in index.html first!\n\nSee FORMSPREE_SETUP.md for instructions.');
+                throw new Error('Formspree not configured');
+            }
+            
+            // Submit to Formspree
+            const response = await fetch(formAction, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            console.log('Response status:', response.status); // Debug log
+            
+            if (response.ok) {
+                // Success message
+                submitBtn.textContent = 'Message Sent! ✓';
+                submitBtn.style.background = '#10b981';
+                
+                // Reset form
+                contactForm.reset();
+                
+                console.log('✅ Form submitted successfully!');
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                }, 3000);
+            } else {
+                const data = await response.json();
+                console.error('Formspree error:', data);
+                throw new Error(data.error || 'Form submission failed');
+            }
+        } catch (error) {
+            // Error message
+            console.error('❌ Form submission error:', error);
+            submitBtn.textContent = 'Error. Try Again';
+            submitBtn.disabled = false;
+            submitBtn.style.background = '#ef4444';
+            
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = '';
+            }, 3000);
+        }
+    });
+} else {
+    console.error('❌ Contact form not found!');
+}
+
+// Load status immediately on page load
+loadStatus();
+
+// Refresh status every 30 seconds to catch real-time updates
+setInterval(loadStatus, 30000);
